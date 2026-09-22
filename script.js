@@ -26,3 +26,28 @@ if (anoEl) {
       : 'Fechado — abre às 07h';
   }
 })();
+
+// Abre a imagem do encarte de ofertas em um modal ao clicar
+(function () {
+  var imagemOfertas = document.getElementById('imagem-ofertas');
+  var modalImagem = document.getElementById('modal-imagem');
+  var modalConteudo = document.getElementById('modal-imagem-conteudo');
+  var modalFechar = document.getElementById('modal-fechar');
+
+  if (!imagemOfertas || !modalImagem || !modalConteudo || !modalFechar) return;
+
+  imagemOfertas.addEventListener('click', function () {
+    modalConteudo.src = imagemOfertas.src;
+    modalImagem.classList.add('aberto');
+  });
+
+  modalFechar.addEventListener('click', function () {
+    modalImagem.classList.remove('aberto');
+  });
+
+  modalImagem.addEventListener('click', function (e) {
+    if (e.target === modalImagem) {
+      modalImagem.classList.remove('aberto');
+    }
+  });
+})();

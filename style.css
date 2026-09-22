@@ -120,8 +120,7 @@ section .section-head p{font-size:17px;}
 
 /* Ofertas */
 .offers-inner{display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:start;}
-.offers figure{width: 100%;}
-.offers figure img{height: auto; object-fit: contain; display: block; width: 100%;}
+.offers figure{margin:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--bg-alt);}
 .offers figcaption{padding:14px 18px; font-size:14px; border-top:1px solid var(--line);}
 .offers-side h2{font-size:clamp(26px, 3.2vw, 34px);}
 
@@ -170,4 +169,40 @@ footer ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:col
   .location-inner{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr; gap:26px;}
   section{padding:48px 0;}
+}
+
+/* Modal da imagem de ofertas (clique para ampliar) */
+.clicavel{
+  cursor:pointer;
+  transition:transform .2s ease;
+}
+.clicavel:hover{
+  transform:scale(1.02);
+}
+
+.modal-imagem{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  background:rgba(0,0,0,.85);
+  align-items:center;
+  justify-content:center;
+}
+.modal-imagem.aberto{
+  display:flex;
+}
+.modal-conteudo{
+  max-width:90%;
+  max-height:85vh;
+  border-radius:8px;
+}
+.modal-fechar{
+  position:absolute;
+  top:20px;
+  right:30px;
+  color:#fff;
+  font-size:2.5rem;
+  cursor:pointer;
+  line-height:1;
 }

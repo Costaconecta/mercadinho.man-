@@ -120,7 +120,8 @@ section .section-head p{font-size:17px;}
 
 /* Ofertas */
 .offers-inner{display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:start;}
-.offers figure{margin:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--bg-alt);}
+.offers figure{width: 100%;}
+.offers figure img{height: auto; object-fit: contain; display: block; width: 100%;}
 .offers figcaption{padding:14px 18px; font-size:14px; border-top:1px solid var(--line);}
 .offers-side h2{font-size:clamp(26px, 3.2vw, 34px);}
 
